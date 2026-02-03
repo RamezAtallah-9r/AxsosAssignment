@@ -1,0 +1,195 @@
+body {
+  background-image: url('5311.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+    padding:10px;
+  width: 600px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(128, 113, 29, 0.867);
+}
+
+.top {
+      border-radius: 10px 10px 0 0;
+    height: 100px;
+    background-color: orange;
+    display: grid;
+  text-align: center;
+  justify-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  
+}
+.top h1 {
+    padding: 20px;
+  margin: 0;
+  padding-bottom: 10px;
+  color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px whitesmoke;
+}
+.section1 {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.section1 .name {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.section1 .name label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: orange;
+  text-shadow: 1px 1px 2px whitesmoke;
+}
+
+.section1 .name input {
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid orange;
+  background-color: transparent;
+  outline: none;
+}
+
+.section2 {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.section2 .email {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.section2 .email label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: orange;
+  text-shadow: 1px 1px 2px whitesmoke;
+}
+.section2 .email input {
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid orange;
+  background-color: transparent;
+  outline: none;
+}
+
+.section3 {
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.section3 .ageGender {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.section3 .ageGender label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: orange;
+  text-shadow: 1px 1px 2px whitesmoke;
+}
+
+#age {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid orange;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+#gender {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid orange;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.section4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.section4 .areatext {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.section4 .areatext label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: orange;
+  text-shadow: 1px 1px 2px whitesmoke;
+}
+
+#textarea {
+  padding: 10px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+}
+
+#select {
+  padding: 10px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.submit {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  padding: 12px 30px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff8c00;
+}
+
+

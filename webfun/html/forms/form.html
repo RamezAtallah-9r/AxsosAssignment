@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rrgister Form</title>
+   <link rel="stylesheet" href="form.css">
+  </head>
+  <body>
+    <form action="">
+      <div class="top">
+        <h1>Registration Form</h1>
+      </div>
+      <div class="section1">
+        <div class="name">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required />
+        </div>
+        <div class="name">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required />
+        </div>
+      </div>
+      <div class="section2">
+        <div class="email">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="email">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        </div>
+        <div class="section3">
+            <div class="ageGender">
+                <label for="age">Age:</label>
+                <input type="date" id="age" name="age" required />
+            </div>
+            <div class="ageGender">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>    
+        <div class="section4">
+            <div class="areatext">
+                <label for="textarea">Descripe your self:</label>
+                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+            </div>
+            <div class="areatext">
+                <label for="select">Select your favorite Language</label>
+                <select name="select" id="select"> 
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="php">PHP</option>
+                </select>
+            </div>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Register" />
+        </div>
+    </form>
+  </body>
+</html>
