@@ -8,13 +8,10 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
-form {
-    padding:10px;
-  width: 600px;
-  height: auto;
-  background-color: rgba(255, 255, 255, 0.9);
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   border-radius: 10px;
   box-shadow: 0 6px 8px rgba(128, 113, 29, 0.867);
 }
@@ -27,6 +24,35 @@ form {
   text-align: center;
   justify-items: center;
   margin-bottom: 15px;
+.top-left img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.top-center .title {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.top-right a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .top {
+    flex-direction: row;
+    gap: 8px;
+    padding: 14px 18px;
+  }
+  .top-center .title { font-size: 1rem; }
+  .top-left img { width: 40px; height: 40px; }
+}
   border-bottom: 2px solid rgb(255, 255, 255);
   
 }
