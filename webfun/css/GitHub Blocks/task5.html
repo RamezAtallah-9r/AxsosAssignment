@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GitHub Blocks</title>
+    <link rel="stylesheet" href="task5.css">
+    <script src="https://kit.fontawesome.com/25732d4a9b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h1>GitHub Blocks</h1>
+        </div>
+        <div class="main">
+            <div class="block1">
+                <img src="https://octodex.github.com/images/securityknightocat.png" alt="github">
+                <img src="https://octodex.github.com/images/universetocat.png" alt="github">
+                <img src="https://octodex.github.com/images/manufacturetocat.png" alt="github">
+            </div>
+            <div class="block2">
+                <img src="https://octodex.github.com/images/Sentrytocat_octodex.jpg" alt="github">
+                <img src="https://octodex.github.com/images/puddle_jumper_octodex.jpg" alt="github">
+            </div>
+            <div class="block3">
+                <img src="https://octodex.github.com/images/surftocat.png" alt="github">
+                <img src="https://octodex.github.com/images/hula_loop_octodex03.gif" alt="github">
+                <img src="https://octodex.github.com/images/skatetocat.png" alt="github">
+            </div>
+        </div>
+        <div class="bottom">
+            <button id="viewbutton">
+                <i class="fa-solid fa-eye">view</i></button>
+            <h4>Image source: <a href="https://octodex.github.com/">octodex</a></h4>
+        </div>
+    </div>
+    <script> 
+        const vb = document.getElementById('viewbutton');
+        const bloks = document.querySelectorAll('.main');
+        vb.addEventListener('click', function(){
+    bloks[0].style.display = (bloks[0].style.display === 'none') ? 'flex' : 'none';
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.nav{
+    background-color: #333333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav h1{
+    color: white;
+    font-family: sans-serif;
+    margin-left: 10px;
+    font-family: "Delius", cursive;
+    font-style: normal;
+}
+
+.nav-links{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    text-align: center;
+
+    width: 25%;
+}
+.nav-links li{
+    display: flex;
+    text-align: center;
+    list-style: none;
+    color: #b4b4b4;
+    align-items: center;
+}
+.nav-links li a{
+    list-style: none;
+    color: #b4b4b4;
+}
+.nav-links li .active{
+    color: white;
+}
+.nav-links li a:hover{
+    color: white;
+}
+.nav-links li .btn{
+    background-color: #17a2b8;
+    color: white;
+    border: 1.5px solid black;
+    box-shadow: 1px 2px black;
+    font-family: "Delius", cursive;
+    font-style: normal;
+}

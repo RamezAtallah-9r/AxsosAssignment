@@ -1,51 +1,50 @@
-.container {
+.container{
     width: 950px;
     background-color: silver;
     margin: 0px auto;
-    padding: 10px;
     display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding: 10px;
     justify-content: space-between;
 }
- 
 .top-nav {
-    height: 150px;
     width: 100%;
+    height: 150px;
     background-color: green;
-    
- 
 }
- 
 .side-nav {
     height: 300px;
     width: 200px;
     background-color: blue;
-    margin-top: 10px;
 }
- 
 .main {
     height: 400px;
     width: 700px;
     background-color: red;
-    display: flex;
+       display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    padding: 5px;
-    margin-top: 10px;
+    flex-wrap:wrap;
+    padding: 10px;
 }
- 
 .sub-content {
     height: 200px;
     width: 210px;
     background-color: yellow;
     margin: 10px;
 }
- 
 #advertisement {
     height: 120px;
-    width: 630px;
+    width: 670px;
     background-color: purple;
-    width: 100%;
     margin: 10px;
+}
+.row {
+    /* TODO - what should go here? */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
 }
