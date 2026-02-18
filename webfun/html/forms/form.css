@@ -23,12 +23,18 @@ form {
       border-radius: 10px 10px 0 0;
     height: 100px;
     background-color: orange;
-    display: grid;
-  text-align: center;
-  justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
   margin-bottom: 15px;
   border-bottom: 2px solid rgb(255, 255, 255);
   
+}
+.top img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 .top h1 {
     padding: 20px;

@@ -29,8 +29,10 @@
     align-items: center;
 }
 .nav-links li a{
+    size: 30px;
     list-style: none;
     color: #b4b4b4;
+    text-decoration: none;
 }
 .nav-links li .active{
     color: white;
@@ -45,4 +47,6 @@
     box-shadow: 1px 2px black;
     font-family: "Delius", cursive;
     font-style: normal;
+    padding:5px 10px 5px 10px;
+
 }

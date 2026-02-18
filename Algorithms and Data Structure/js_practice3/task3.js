@@ -5,6 +5,7 @@ function welcome(){
 }
 welcome();
 
+
 function square(a){
     return a * a;
 }

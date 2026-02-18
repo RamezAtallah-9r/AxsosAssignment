@@ -2,13 +2,15 @@ img{
     width: 200px;
     height: 200px;
     margin: 10px;   
+    max-width: 100%;
+    heaight: auto;
 }
 body{
     text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    display: flex;
     background-color: #e1fbf7;
+    align-items: center;
 }
 .container {
     width: 50%;
@@ -36,6 +38,7 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 10px;
+    overflow: hidden;
 }
 .block1{
     background-color: #4ebdf6;
@@ -48,32 +51,32 @@ body{
 }
 .bottom button {
     margin-top: 10px;
-  padding: 17px 40px;
-  border-radius: 50px;
-  cursor: pointer;
-  border: 0;
-  background-color: white;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.5s ease;
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
 }
 
 button:hover {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    letter-spacing: 3px;
 }
 
 button:active {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+    letter-spacing: 3px;
 }
 
 .bottom h4{

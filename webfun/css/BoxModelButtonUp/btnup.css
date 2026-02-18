@@ -1,13 +1,15 @@
 .search {
-  border: 2px solid gray;
+  border: 3px solid #39acad;
   width: 200px;
   height: 40px;
   border-radius: 50px;
   margin-left: 25px;
   margin-bottom: 15px;
-  color: #129b9d;
+  color: #3bacad;
   size: 150px;
+  font-size: medium;
   background-color: #f5f5f5;
+  font-weight: bold;
 }
 .plus {
   width: 50px;
@@ -17,7 +19,7 @@
   margin-left: 25px;
   margin-bottom: 15px;
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: 30px;
   background-color: #00d1b2;
 }
 .create {
@@ -28,4 +30,6 @@
   margin-bottom: 15px;
   border: 3px solid black;
   box-shadow: 3px 3px black;
+  color: #d8e6fa;
+  font-weight: normal;
 }

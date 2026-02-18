@@ -5,18 +5,26 @@ h1{
     text-align: left;
     background-color: black;
     margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
 }
 h1 #s1{
     color: white;
 }
 h1 #s2{
-    color: lightcyan;
+    color: #00ffff;
+    margin-left: 0px;
 }
 h2{
     margin: 10px;
     background-color: rgb(49, 49, 155);
     color: white;
     text-align: center;
+    padding: 10px;
+    font-style: italic;
+    font-weight: normal;
 }
 h3{
     margin: 10px;
@@ -25,4 +33,5 @@ h3{
     text-align: right;
     text-decoration: underline;
     font-size: 27px;
+    padding: 10px;
 }
