@@ -1,9 +1,12 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
 img{
     width: 200px;
     height: 200px;
     margin: 10px;   
     max-width: 100%;
-    heaight: auto;
 }
 body{
     text-align: center;
@@ -82,4 +85,24 @@ button:active {
 .bottom h4{
     color: #364855;
     padding: 20px;
+}
+
+
+
+.cont{
+    width: 50%;
+    height: auto;
+    background-color: #d8a7b2;
+
+}
+.img-con{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.boximg1{
+    padding: 10px;
+    background-color: #D8A3CA;
+    justify-content: space-between;
+
 }

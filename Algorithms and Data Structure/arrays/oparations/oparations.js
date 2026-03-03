@@ -128,3 +128,71 @@ for(i=0;i<animals.length;i++){
 animals=sub1.concat(b).concat(sub2);
 console.log(animals);
 
+
+//deleting Elements
+let fruits = ["apple", "banana", "cherry", "date"];
+console.log(fruits);
+var arr= [...fruits];
+
+//shift
+let removedFruit = fruits.shift();
+console.log(removedFruit);
+console.log(fruits);
+fruits=[...arr];
+
+//pop
+console.log(fruits);
+removedFruit = fruits.pop();
+console.log(removedFruit);
+console.log(fruits);
+fruits=[...arr];
+
+//filter
+ removedFruit = fruits.filter(item => item != 'banana');
+ //or removedFruit= fruits.splice(1,1);
+ console.log(removedFruit);
+ console.log(fruits);
+fruits=[...arr];
+
+//Combining Arrays
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+console.log(array1 + "   " + array2);
+let arr=array1.concat(array2);
+console.log(arr);
+
+//splitting an Array
+let items = ["a", "b", "c", "d", "e"];
+let arr1= items.slice(0, 3);
+let arr2= items.slice(3);
+console.log(arr1);
+console.log(arr2);
+
+//filtering an Array
+let numbers1 = [1, 5, 10, 15, 20, 25, 30];
+console.log(numbers1);
+let arr= numbers1.filter(item => item>15);
+console.log(arr);
+
+
+//advanced challenge
+let arr=[1, 2, 2, 3, 4, 4, 5, 5];
+console.log(arr);
+
+var numbers = [];
+var count = [];
+var j=0;
+for(let i=0;i<arr.length;i++){
+    if(arr[i]==numbers[j]){
+        count[j]++;
+    }
+    else{
+        numbers.push(arr[i]);
+        count.push(1);
+        if(numbers[j]!=arr[i+1]){
+            j++;
+        }
+    }
+}
+console.log(numbers);
+console.log(count);
