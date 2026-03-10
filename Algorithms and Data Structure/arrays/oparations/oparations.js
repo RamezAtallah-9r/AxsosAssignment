@@ -179,7 +179,7 @@ console.log(arr);
 let arr=[1, 2, 2, 3, 4, 4, 5, 5];
 console.log(arr);
 
-var numbers = [];
+ numbers = [];
 var count = [];
 var j=0;
 for(let i=0;i<arr.length;i++){
@@ -196,3 +196,28 @@ for(let i=0;i<arr.length;i++){
 }
 console.log(numbers);
 console.log(count);
+
+
+//bonus challenge
+let x=[1,3,5,7,9];
+let y=[2,4,5,6,8,9];
+let z=[];
+let a=0,b=0;
+for(let i=0;i<x.length + y.length;i++){
+    if(i<x.length || i-x.length-1<y.length){
+        if(x[a]<y[b]){
+            z.push(x[a]);
+            a++;
+        }
+        else if(x[a]>y[b]){
+            z.push(y[b]);
+            b++;
+        }
+        else if(x[a]=y[b]){
+            z.push(x[a]);
+            a++;
+            b++;
+        }
+    }
+}
+console.log(z);

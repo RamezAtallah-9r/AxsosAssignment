@@ -17,6 +17,9 @@ for (var i = 0; i < arr.length; i++) {
         break;  
     }
 }
+
+
+
 var map=[];
 function addmap(arr,x,y) {
     arr.push([x,y]);
@@ -28,6 +31,8 @@ function search(arr,z){
             return arr[i][1];
         }
 }}
+
+
 for (var i = 0; i < arr.length; i++) {
     var complement = target - arr[i];
     var index = search(map, complement);

@@ -1,60 +1,57 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-      font-family: "Delius", cursive;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Delius", cursive;
 }
-.nav{
-    background-color: #333333;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0px auto;
-    max-width: 100%;
+.nav {
+  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px auto;
+  min-width: fit-content;
 }
-.nav h1{
-    text-align: center;
-    color: white;
-    margin: 10px;
+.nav h1 {
+  text-align: center;
+  color: white;
+  margin: 10px;
+}
 
+.nav-links {
+  margin: auto 10px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
 }
-
-.nav-links{
-    margin: auto 10px;
-    padding: 15px 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between ;
-    gap: 20px;
-    text-align: center;
-    max-width: 100%;
+.nav-links li {
+  display: flex;
+  text-align: center;
+  list-style: none;
+  color: #b4b4b4;
+  align-items: center;
+  min-width: 130px;
 }
-.nav-links li{
-    display: flex;
-    text-align: center;
-    list-style: none;
-    color: #b4b4b4;
-    align-items: center;
+.nav-links li a {
+  size: 30px;
+  list-style: none;
+  color: #b4b4b4;
+  text-decoration: none;
 }
-.nav-links li a{
-    size: 30px;
-    list-style: none;
-    color: #b4b4b4;
-    text-decoration: none;
+.nav-links li .active {
+  color: orange;
 }
-.nav-links li .active{
-    color: white;
+.nav-links li a:hover {
+  color: white;
 }
-.nav-links li a:hover{
-    color: white;
-}
-.nav-links li .btn{
-    background-color: #17a2b8;
-    color: white;
-    border: 2px solid black;
-    box-shadow: 1.5px 2.5px black;
-    font-family: "Delius", cursive;
-    font-style: normal;
-    padding:5px 10px 5px 10px;
-
+.nav-links li .btn {
+  background-color: #17a2b8;
+  color: white;
+  border: 2px solid black;
+  box-shadow: 2px 2.5px black;
+  font-family: "Delius", cursive;
+  padding: 5px 10px;
 }
