@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DojoWeather - Weather Forecast">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>DojoWeather</title>
+</head>
+
+<body>
+    <header>
+        <h1>DojoWeather</h1>
+        <ul>
+            <li>Burbank</li>
+            <li>Chicago</li>
+            <li>Dallas</li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="info">
+            <h2>San Jose</h2>
+            <div class="temp-select">
+                <label for="temp">show temperature in</label>
+                <select name="temp" id="temp">
+                    <option value="c">°C</option>
+                    <option value="f">°F</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h3>Today</h3>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                </div>
+                <p class="desc">some rain</p>
+                <div class="temps">
+                    <span class="high">24°</span>
+                    <span class="low">18°</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Tomorrow</h3>
+                <div class="icon-circle sun">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <p class="desc">some sun</p>
+                <div class="temps">
+                    <span class="high">27°</span>
+                    <span class="low">19°</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Friday</h3>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+                <p class="desc">some clouds</p>
+                <div class="temps">
+                    <span class="high">21°</span>
+                    <span class="low">16°</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Saturday</h3>
+                <div class="icon-circle sun">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <p class="desc">some sun</p>
+                <div class="temps">
+                    <span class="high">26°</span>
+                    <span class="low">21°</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cookies" id="cookieBanner">
+            <div class="cookie-left">
+                <i class="fa-solid fa-cookie-bite cookie-icon"></i>
+                <div class="cookie-text">
+                    <strong>Stop! Cookie time</strong>
+                    <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <a href="#">Read more...</a></p>
+                </div>
+            </div>
+            <button id="acceptBtn">I Accept</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Weather Forecast</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
