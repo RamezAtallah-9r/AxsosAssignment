@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Music Player</h1>
+  </header>
+  <main>
+    <section class="playing-audio">
+        <div class="audio-cover">
+            <img src="../cover.jpg" alt="">
+        </div>
+        <div class="audio-info">
+            <h2>Song: </h2>
+            <h3>Artist: </h3>
+        </div>
+        <div class="audio-play">
+            <audio id="audio" controls autoplay muted>
+                <source id="audio-source" src="" type="">
+            </audio>
+        </div>
+    </section>
+
+    <section class="audio-list">
+        <table class="playlist-table">
+            <thead>
+                <!-- Title row: spans all 3 columns, file input on the right -->
+                <tr class="table-title-row">
+                    <th colspan="3">
+                        <span>PlayList</span>
+                        <input type="file"> Add Song
+                    </th>
+                </tr>
+                <!-- Column headers row -->
+                <tr class="table-col-row">
+                    <th>No.</th>
+                    <th>Song</th>
+                    <th>Artist</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- rows injected by createSongList() in scripts.js -->
+            </tbody>
+        </table>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

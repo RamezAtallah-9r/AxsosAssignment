@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaefef;
+  color: #25343f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  background-color: #25343f;
+  color: #eaefef;
+  padding: 20px 32px;
+  border-bottom: 3px solid #ff9b51;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Main ── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Company info section ── */
+section.companey-information {
+  background-color: #ffffff;
+  border: 1px solid #bfc9d1;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+section.companey-information h1 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #25343f;
+}
+
+section.companey-information p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a5f6e;
+  text-align: justify;
+}
+
+/* ── Button ── */
+button {
+  background-color: #ff9b51;
+  color: #ffffff;
+  border: none;
+  padding: 6px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #e07a30;
+}
+
+/* ── Map section ── */
+section#map {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #bfc9d1;
+  line-height: 0;
+}
+
+section#map iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+}
+
+/* ── Footer ── */
+footer {
+  background-color: #25343f;
+  color: #bfc9d1;
+  padding: 14px 32px;
+  text-align: center;
+  font-size: 0.8rem;
+  border-top: 3px solid #ff9b51;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  main { padding: 1rem; }
+  section#map iframe { height: 280px; }
+}

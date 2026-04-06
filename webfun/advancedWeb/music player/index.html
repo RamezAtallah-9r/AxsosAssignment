@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple HTML music player">
+  <title>Music Player</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>music player</h1>
+  </header>
+
+  <main>
+
+    <!-- Left: Player -->
+    <section class="playing-audio">
+      <div class="audio-cover">
+        <img id="cover" src="cover.jpg" alt="Album cover">
+      </div>
+      <div class="audio-info">
+        <h2 id="track-title">Select a song</h2>
+        <h3 id="track-artist">—</h3>
+      </div>
+      <div class="audio-controls">
+        <!--
+          Two <source> elements for browser compatibility:
+            audio/mpeg  (MP3) — Chrome, Edge, Safari
+            audio/ogg   (OGG) — Firefox / older browsers
+        -->
+        <audio id="player" controls autoplay muted>
+          <source id="src-mp3" src="" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+    <!-- Right: Playlist -->
+    <section class="playing-list">
+      <table>
+        <thead>
+          <tr><th colspan="3">PlayList</th></tr>
+          <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Duration</td>
+          </tr>
+        </thead>
+        <tbody id="playlist-body">
+          <!-- rows injected by script below -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>

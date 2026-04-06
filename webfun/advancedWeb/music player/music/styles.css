@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaefef;
+  color: #25343f;
+  font-family: Arial, sans-serif;
+}
+
+/* ── Header ── */
+header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #25343f;
+  border-bottom: 3px solid #ff9b51;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  color: #ff9b51;
+  letter-spacing: 0.05em;
+}
+
+/* ── Main ── */
+main {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* ── Shared section ── */
+section {
+  background-color: #ffffff;
+  border: 1px solid #bfc9d1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Player panel ── */
+.playing-audio {
+  flex: 1;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.audio-cover {
+  width: 100%;
+}
+
+.audio-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #bfc9d1;
+  display: block;
+}
+
+.audio-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.audio-info h2 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #25343f;
+}
+
+.audio-info h3 {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #bfc9d1;
+}
+
+.audio-play {
+  width: 100%;
+}
+
+.audio-play audio {
+  width: 100%;
+  accent-color: #ff9b51;
+}
+
+/* ── Playlist panel ── */
+.audio-list {
+  flex: 2;
+  align-items: stretch;
+}
+
+/* ── Table ── */
+.playlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.playlist-table thead {
+  background-color: #25343f;
+  color: #eaefef;
+}
+
+/* ── "PlayList" title row ── */
+.playlist-table thead tr:first-child th {
+  padding: 12px 12px;
+  font-size: 1rem;
+  color: #eaefef;
+  border-bottom: 1px solid #3d5060;
+  width: 100%;
+}
+
+/* ── No. / Song / Artist column header row ── */
+.playlist-table thead tr:last-child th {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #bfc9d1;
+  font-weight: normal;
+  background-color: #1d2b35;
+}
+
+/* ── File input ── */
+.playlist-table thead input[type="file"] {
+  font-size: 0.78rem;
+  cursor: pointer;
+  background-color: #ff9b51;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.playlist-table thead input[type="file"]::-webkit-file-upload-button {
+  background-color: #e07a30;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  margin-right: 6px;
+}
+
+.playlist-table tbody tr {
+  border-bottom: 1px solid #bfc9d1;
+  cursor: pointer;
+}
+
+.playlist-table tbody tr:nth-child(even) {
+  background-color: #eaefef;
+}
+
+.playlist-table tbody tr:hover td {
+  background-color: #bfc9d1;
+  color: #25343f;
+}
+
+.playlist-table tbody tr.active td {
+  background-color: #ff9b51;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.playlist-table td {
+  padding: 10px 12px;
+  color: #25343f;
+}
+
+/* ── Footer ── */
+footer {
+  padding: 1rem 2rem;
+  background-color: #25343f;
+  border-top: 3px solid #ff9b51;
+  font-size: 0.8rem;
+  color: #bfc9d1;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .playing-audio {
+    width: 100%;
+  }
+}
