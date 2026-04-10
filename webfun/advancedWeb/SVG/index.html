@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <svg width="1920" height="757" viewBox="0 0 1920 757">
+        <circle class="sun" cx="1600" cy="100" r="40" />
+        <circle class="sun-ray" cx="1600" cy="100" r="60" />
+        <line
+          class="ground-line"
+          x1="0"
+          y1="757"
+          x2="1920"
+          y2="757"
+          stroke="black"
+          stroke-width="20"
+        />
+
+        <!-- Bottom Rect & Polygon (25%) -->
+        <rect
+          x="25%"
+          y="58%"
+          width="50%"
+          height="40%"
+          fill="none"
+          stroke="gray"
+        />
+        <polygon
+          class="poly-bottom"
+          points="480,439 480,519 560,470 640,530 720,470 800,530 880,470 960,530 1040,470 1120,530 1200,470 1280,530 1360,470 1440,530 1440,439"
+        />
+
+        <!-- Middle Rect & Polygon (32.5%) -->
+        <rect
+          x="32.5%"
+          y="28%"
+          width="35%"
+          height="30%"
+          fill="none"
+          stroke="gray"
+        />
+        <polygon
+          class="poly-middle"
+          points="624,215  624,300  680,250  735,300  791,250  846.5,300 903,250 959.5,300 1016,250 1072.5,300 1129,250 1185.5,300 1242,250 1298.5,300  1295.5,215"
+        />
+
+        <!-- Top Rect & Polygon (42%) -->
+        <rect
+          x="42%"
+          y="3%"
+          width="15%"
+          height="25%"
+          fill="none"
+          stroke="gray"
+        />
+        <polygon
+          class="poly-top"
+          points="810,25  810,102  856.6,62  903.26,102  950.92,62 998.58,102 1046.24,62 1090,102 1090,25"
+        />
+      </svg>
+    </main>
+    <footer>
+      <p>Press for animation</p>
+      <button>play</button>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>

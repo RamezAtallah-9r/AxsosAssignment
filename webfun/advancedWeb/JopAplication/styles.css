@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eef3ff;
+    padding: 2rem 0;
+}
+
+form{
+    width: 40%;
+    height: auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 600px;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.inputs label{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.inputs input, .inputs textarea{
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgb(210, 210, 210);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.inputs textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.inputs input:focus, .inputs textarea:focus{
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.inputs input::placeholder{
+    color: #aaa;
+}
+
+fieldset{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.wokeSection, .workSection{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wokeSection label, .workSection label {
+    font-weight: normal;
+    color: #666;
+}
+
+.btns{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.btns button{
+    width: 35%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btns button[type="submit"]:hover{
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btns button[type="reset"]:hover{
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+/* Tooltip Styles */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    color: #007bff;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+/* Tooltip Arrow */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Validation State Styles */
+.valid {
+    border-color: yellow !important;
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5) !important;
+}
+
+.invalid {
+    border-color: red !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5) !important;
+}

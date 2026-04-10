@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Job Application Form</title>
+    </head>
+    <body>
+        <form action target="_self" autocomplete="on" novalidate onsubmit="return validateForm()">
+            <h1>Job Application Form</h1>
+            
+            <div class="inputs">
+                <label for="firstName">First Name 
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">First name should not contain numbers or spaces.</span>
+                    </span>
+                </label>
+                <input type="text" id="firstName" oninput="validateFirstName()" />
+            </div>
+
+            <div class="inputs">
+                <label for="lastName">Last Name
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Last name should not contain numbers or spaces.</span>
+                    </span>
+                </label>
+                <input type="text" id="lastName" oninput="validateLastName()" />
+            </div>
+
+            <div class="inputs">
+                <label for="email">Email Address
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Please enter a valid email address (e.g., name@example.com).</span>
+                    </span>
+                </label>
+                <input type="email" id="email" oninput="validateEmail()" />
+            </div>
+
+            <div class="inputs">
+                <label for="phone">Phone Number
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Phone number should be 10-15 digits.</span>
+                    </span>
+                </label>
+                <input type="tel" id="phone" oninput="validatePhone()" />
+            </div>
+
+            <div class="inputs">
+                <label for="experience">Years of Experience
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Enter a number between 0 and 30.</span>
+                    </span>
+                </label>
+                <input type="number" id="experience" placeholder="enter a number between 0 and 30" oninput="validateExperience()" />
+            </div>
+
+            <div class="inputs">
+                <fieldset>
+                    <legend>Preferred Work Type</legend>
+                    <div class="wokeSection">
+                        <input type="radio" name="workType" id="remote" onchange="validateWorkType()" />
+                        <label for="remote">Remote</label>
+                    </div>
+
+                    <div class="workSection">
+                        <input type="radio" name="workType" id="onsite" onchange="validateWorkType()" />
+                        <label for="onsite">on-site</label>                    
+                    </div>
+
+                    <div class="wokeSection">
+                        <input type="radio" name="workType" id="Hybrid" onchange="validateWorkType()" />
+                        <label for="Hybrid">Hybrid</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="inputs">
+                <label for="cv">Upload CV (PDF only)
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Please upload a PDF file.</span>
+                    </span>
+                </label>
+                <input type="file" id="cv" accept=".pdf" onchange="validateCV()" />
+            </div>
+
+            <div class="inputs">
+                <label for="appId">Application ID (auto-generated)
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">This ID is auto-generated and cannot be empty.</span>
+                    </span>
+                </label>
+                <input type="text" id="appId" oninput="validateAppId()" />
+            </div>
+
+            <div class="inputs">
+                <label for="coverLetter">Cover Letter
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Cover letter should be at least 20 characters long.</span>
+                    </span>
+                </label>
+                <textarea name="coverLetter" id="coverLetter" oninput="validateCoverLetter()"></textarea>
+            </div>
+
+            <div class="inputs">
+                <label for="slaray">Salary
+                    <span class="tooltip-container">
+                        <i class="fa-regular fa-lightbulb"></i>
+                        <span class="tooltip-text">Select a salary range.</span>
+                    </span>
+                </label>
+                <input type="range" id="slaray" name="salary" min="0" max="10000" oninput="validateSalary()">
+            </div>
+
+            <div class="btns">
+                <button type="submit">Submit</button>
+                <button type="reset" onclick="resetStyles()">Reset</button>
+            </div>
+        </form>
+        <script src="scripts.js"></script>
+    </body>
+</html>

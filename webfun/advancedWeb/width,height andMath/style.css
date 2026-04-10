@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #c3d9ff, #fce4ff);
+}
+
+/* Page Title */
+h1 {
+    text-align: center;
+    color: #3a1d71;
+    font-size: clamp(26px, 5vw, 56px);
+    margin-bottom: 40px;
+}
+
+/* Responsive Card Style */
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 25px;
+    max-width: 700px;
+    margin: 25px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #32145c;
+    margin-bottom: 10px;
+}
+.section-title img{
+    max-width: 50%;
+    height: auto;
+    min-width: 50px;
+}
+.section-title button{
+    height: 50px;
+    min-width: 130px;
+}
+.fit-box{
+    background-color: aquamarine;
+    width: fit-content;
+}
+.fixed-box{
+    background-color: blueviolet;
+    width: calc(100% - 100px);
+}
+.resizable-box{
+    max-width: 400px;
+    min-width: 200px;
+    background-color: brown;
+    height: 50px;
+}
