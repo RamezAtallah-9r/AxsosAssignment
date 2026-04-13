@@ -1,0 +1,85 @@
+body {
+font-family: Arial, sans-serif;
+background-color: #f8f8f8;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+margin: 0;
+padding-top: 50px;
+}
+
+.menu-container {
+width: 100%;
+max-width: 500px;
+text-align: center;
+}
+
+h1 {
+font-size: 24px;
+margin-bottom: 30px;
+color: #000;
+}
+
+.menu-card {
+background-color: #fff;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+text-align: left;
+}
+
+.menu-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.menu-item {
+padding: 20px 0;
+border-bottom: 1px solid #f0f0f0;
+display: list-item;
+margin-left: 60px;
+vertical-align: middle;
+}
+
+
+.item-1 { list-style-image: url('shawarma\ \(2\).png'); }
+.item-2 { list-style-image: url('hummus.png'); }
+.item-3 { list-style-image: url('falafel.png'); }
+.item-4 { list-style-image: url('kebab.png'); }
+.item-5 { list-style-image: url('salad.png'); }
+.item-6 { list-style-image: url('salad\ \(1\).png'); }
+
+.item-details {
+display: inline-block;
+vertical-align: middle;
+padding-left: 10px;
+}
+
+.item-details h2 {
+font-size: 18px;
+margin: 0 0 5px 0;
+color: #000;
+}
+
+.item-details .description {
+font-size: 14px;
+color: #888;
+margin: 0 0 5px 0;
+}
+
+.item-details .price {
+font-size: 16px;
+font-weight: bold;
+color: #d35400;
+margin: 0;
+}
+
+@media (max-width: 480px) {
+.menu-card {
+padding: 20px;
+}
+.menu-item {
+margin-left: 80px;
+}
+}
