@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef3ff;
+}
+
+main {
+  margin-top: 10%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+  box-shadow: 0 0 10px gray;
+  border-radius: 1rem;
+  background-color: white;
+  min-width: 600px;
+  gap: 2rem;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plans {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+.plan {
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.plan-head {
+  width: 100%;
+  height: 20%;
+  background-color: #1559c7;
+  border-radius: 0.5rem 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.plan-head span {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.plan-info {
+  width: 100%;
+  padding: 8px 1rem;
+}
+
+ul {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+  padding-left: 1.5rem;
+  color: rgb(85, 85, 85);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+li::before {
+  content: "✓";
+  position: absolute;
+  left: 0px;
+  color: rgb(102, 126, 234);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.plan-price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1559c7;
+}
+
+.period {
+  color: rgb(153, 153, 153);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+button {
+  width: 60%;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #5b70db;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+}
+
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffb703;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+button span {
+  text-align: center;
+  text-decoration: none;
+  padding: 18px 25px;
+  color: #fff;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+  font-size: smaller;
+}
+
+button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.pro .plan-head,
+.pro .plan-button button {
+  background-color: #72459c;
+}
+.enterprise .plan-head,
+.enterprise .plan-button button {
+  background-color: #2ba261;
+}
+
+@keyframes shadowColorChange {
+  0% {
+    box-shadow: 0 0 20px #1559c7;
+  }
+  33% {
+    box-shadow: 0 0 20px #72459c;
+  }
+  66% {
+    box-shadow: 0 0 20px #2ba261;
+  }
+  100% {
+    box-shadow: 0 0 20px #1559c7;
+  } /* Ends where it starts for a smooth loop */
+}
+.plan:hover {
+  scale: 1.1;
+  z-index: 1;
+  animation: shadowColorChange 1s linear infinite;
+}
+
+/* Contact Section Styles */
+.contact {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.contact header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  color: #1559c7;
+  font-weight: 700;
+}
+
+.contact p {
+  color: #666;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Inputs now in separate columns via column flex on .form-group */
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+/* Inputs full width */
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1559c7;
+  box-shadow: 0 0 0 3px rgba(21, 89, 199, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.contact .form-group:last-child {
+  align-items: center;
+}
+
+/* Simple submit button style */
+.contact button[type="submit"] {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #1559c7, #5b70db);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(21, 89, 199, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact button[type="submit"]:hover {
+  background: linear-gradient(135deg, #1247a6, #4a60c2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(21, 89, 199, 0.4);
+}
+
+.contact button[type="submit"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(21, 89, 199, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    min-width: auto;
+    padding: 0.5rem;
+  }
+
+  .contact .form-group:nth-child(1) {
+    flex-direction: column;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+}
+.plans .plan:nth-child(1) li::selection {
+  background-color: #1559c7;
+  color: white;
+}
+
+/* Targets the second plan */
+.plans .plan:nth-child(2) li::selection{
+  background-color: #72459c;
+    color: white;
+}
+
+/* Targets the third plan */
+.plans .plan:nth-child(3) li::selection{
+  background-color: #2ba261;
+    color: white;
+}
+.error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6 !important;
+}

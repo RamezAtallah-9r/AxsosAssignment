@@ -1,0 +1,1 @@
+# Quote First Letter Styling Task\n\n1. [x] Create TODO.md (done)\n2. [x] Edit quote box/styles.css to add .container p::first-letter rule for first letter size/color.\n3. [x] Fix quote pseudo-elements content for proper display.\n4. [x] Test in browser.\n5. [x] Complete task.
