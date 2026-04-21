@@ -1,17 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="AnimeWorld - Explore stunning anime character galleries with immersive animations">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Document</title>
+  <script src="https://kit.fontawesome.com/25732d4a9b.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <title>AnimeWorld - Dark Fantasy Gallery</title>
 </head>
-<body>
 
-  <main>
+<body>
+  <!-- Background Elements -->
+  <div class="background-layer"></div>
+  <div class="ambient-light ambient-light-1"></div>
+  <div class="ambient-light ambient-light-2"></div>
+  
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo-section">
+        <h1 class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">AnimeWorld</span>
+          <span class="logo-icon">✦</span>
+        </h1>
+        <p class="tagline">A gateway to legendary tales</p>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">
+          <span class="nav-label">Home</span>
+          <span class="nav-underline"></span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-label">Categories</span>
+          <span class="nav-underline"></span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-label">Trending</span>
+          <span class="nav-underline"></span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-label">About</span>
+          <span class="nav-underline"></span>
+        </a>
+        <button class="nav-item user-btn" aria-label="User profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </nav>
+    </div>
+    <div class="header-divider"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h2 class="hero-title">Legends Await</h2>
+        <p class="hero-subtitle">Discover the most iconic characters in anime history</p>
+      </div>
+      <div class="hero-image">
+        <img src="https://4kwallpapers.com/images/walls/thumbs_3t/25525.png" alt="Three Moons - Featured Story">
+        <div class="hero-overlay"></div>
+        <span class="hero-label">Featured</span>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="filter-wrapper">
+        <div class="search-box">
+          <i class="fa-solid fa-search search-icon"></i>
+          <input type="text" class="search-input" placeholder="Search characters...">
+          <button class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="categories-wrapper">
+          <h3 class="filter-label">Filter by Series</h3>
+          <ul class="category-list">
+            <li class="category-item active" data-category="all">
+              <span class="category-name">All Series</span>
+              <span class="category-count">(16)</span>
+            </li>
+            <li class="category-item" data-category="Naruto">
+              <span class="category-name">Naruto</span>
+              <span class="category-count">(5)</span>
+            </li>
+            <li class="category-item" data-category="Bleach">
+              <span class="category-name">Bleach</span>
+              <span class="category-count">(3)</span>
+            </li>
+            <li class="category-item" data-category="One Piece">
+              <span class="category-name">One Piece</span>
+              <span class="category-count">(4)</span>
+            </li>
+            <li class="category-item" data-category="Jujutsu Kaisen">
+              <span class="category-name">Jujutsu Kaisen</span>
+              <span class="category-count">(4)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <h2 class="gallery-title">Character Gallery</h2>
+        <div class="gallery-divider"></div>
+      </div>
+      
+      <div class="story-gallery">
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/26040.jpg" alt="Naruto" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Kakashi Hatake</h3>
+            <p class="story-series">Naruto</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/25550.jpg" alt="Naruto" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Itachi Uchiha</h3>
+            <p class="story-series">Naruto</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs/15469.jpg" alt="Naruto" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Sakura Haruno</h3>
+            <p class="story-series">Naruto</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/18690.jpg" alt="Naruto" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Naruto Uzumaki</h3>
+            <p class="story-series">Naruto</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/10831.jpg" alt="Naruto" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Sasuke Uchiha</h3>
+            <p class="story-series">Naruto</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/19704.png" alt="Bleach" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Ichigo Kurosaki</h3>
+            <p class="story-series">Bleach</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/19719.png" alt="Bleach" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Uryu Ishida</h3>
+            <p class="story-series">Bleach</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/10509.png" alt="Bleach" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Rukia Kuchiki</h3>
+            <p class="story-series">Bleach</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/25499.jpg" alt="One Piece" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Monkey D. Luffy</h3>
+            <p class="story-series">One Piece</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/18358.jpg" alt="One Piece" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Roronoa Zoro</h3>
+            <p class="story-series">One Piece</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/17879.png" alt="One Piece" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Shanks</h3>
+            <p class="story-series">One Piece</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/16690.jpg" alt="One Piece" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Sanji</h3>
+            <p class="story-series">One Piece</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/25220.jpg" alt="Jujutsu Kaisen" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Yuji Itadori</h3>
+            <p class="story-series">Jujutsu Kaisen</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/16721.jpg" alt="Jujutsu Kaisen" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Satoru Gojo</h3>
+            <p class="story-series">Jujutsu Kaisen</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/9294.jpg" alt="Jujutsu Kaisen" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Sukuna</h3>
+            <p class="story-series">Jujutsu Kaisen</p>
+          </div>
+        </article>
+
+        <article class="story-card" onclick="openModal(this)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') openModal(this)">
+          <div class="story-image-wrapper">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_3t/14604.jpg" alt="Jujutsu Kaisen" class="story-image">
+            <div class="story-overlay">
+              <div class="view-badge">View</div>
+            </div>
+          </div>
+          <div class="story-info">
+            <h3 class="story-title">Yuta Okkotsu</h3>
+            <p class="story-series">Jujutsu Kaisen</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Modal Viewer -->
+  <div class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">
+        <i class="fa-solid fa-times"></i>
+      </button>
+      
+      <div class="modal-images-container"></div>
+      
+      <div class="modal-info">
+        <div class="character-display">
+          <h2 class="character-name"></h2>
+          <p class="character-series"></p>
+          <div class="character-divider"></div>
+        </div>
+      </div>
+      
+      <div class="modal-nav-hint">
+        <span class="hint-text">
+          <i class="fa-solid fa-scroll"></i> Scroll to explore characters
+        </span>
+      </div>
+    </div>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
+
 </html>
