@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>DOM Family Explorer</h1>
+  </header>
+  <main>
+    <section class="div-group">
+        <div class="items">A</div>
+        <div class="items ">B</div>
+        <div class="items">C</div>
+    </section>
+    <section class="btn-group">
+        <button class="btn" onclick="showParent()">show Parent of B</button>
+        <button class="btn" onclick="showChildren()">show children of container</button>
+        <button class="btn" onclick="showSiblings()">show siblings of b</button>
+    </section>
+    <section class="explain">
+        <p>Result will be shown here...</p>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

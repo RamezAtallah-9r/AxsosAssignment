@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;      
+}
+
+main{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px gray;
+    border-radius: 1rem;
+    background-color: rgb(112, 106, 0);
+    min-width: 600px;
+}
+.clock{
+    width: 50%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+.frame{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 1rem solid gray;
+    box-shadow: 0 0 2rem rgba(53, 33, 33, 0.604),inset 0 0 1.5rem gray;
+    background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hour,
+.min,
+.sec {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+    
+}
+.sec{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 35%;
+    height: 5px;
+    border: 2px solid rgb(89, 0, 255);
+    border-radius: 3px;
+    box-shadow: 0 0 2rem rgba(53, 33, 33, 0.604),inset 0 0 1.5rem rgb(93, 0, 255);
+    transform-origin:left;
+}
+.min{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    height: 4px;
+    height: 5px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    box-shadow: 0 0 2rem rgba(53, 33, 33, 0.604),inset 0 0 1.5rem gray;
+    transform-origin:left;
+    transform: rotate(90deg);
+}
+.hour{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    height: 5px;
+    border: 2px solid darkcyan;
+    border-radius: 3px;
+    box-shadow: 0 0 2rem rgba(53, 33, 33, 0.604),inset 0 0 1.5rem darkcyan;
+    transform-origin:left;
+    transform: rotate(270deg);
+}
+
+.second{
+    width: 30%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: darkcyan;
+    box-shadow: inset 0 0 3rem gray;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    perspective: 1000px; 
+    transform-style: preserve-3d;
+}
+.second::before{
+    content: ":";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: darkcyan;
+    box-shadow: inset 0 0 3rem gray;
+    background-color: white;
+    border-radius: 1rem;
+ position: absolute;
+    left: 50%;
+    top: 0%;
+    /* 2. Set the pivot point to the top edge */
+    transform-origin: top;
+    /* 3. Hide the back of the element so it only shows when facing forward */
+    backface-visibility: hidden;
+    
+    animation: flip 5s ease-in-out infinite;
+}
+@keyframes flip {
+    0% {
+        /* Start "behind" pointing up, rotated 180deg on X */
+        transform: translate(-50%, 0%) rotateX(180deg);
+    }
+    50% {
+        /* Swing down to the vertical position (90deg) */
+        transform: translate(-50%, 0%) rotateX(90deg);
+    }
+    100% {
+        /* End flat on the front (0deg) */
+        transform: translate(-50%, 0%) rotateX(0deg);
+    }
+}
