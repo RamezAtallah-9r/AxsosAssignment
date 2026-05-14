@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <main>
+        {% for i in range(num1*num2) %}
+          {% set row = (i // num1) % 2 %}
+          {% set col = (i % num1) % 2 %}
+          {% if row == col %}
+            <div class="card orange" style="width: calc(100% / {{ num1 }}); height: calc(100% / {{ num1 }});"></div>
+          {% else %}
+            <div class="card black" style="width: calc(100% / {{ num1 }}); height: calc(100% / {{ num1 }});"></div>
+          {% endif %}
+        {% endfor %}
+    </main>
+  </body>
+</html>
