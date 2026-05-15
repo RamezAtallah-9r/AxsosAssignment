@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Fruit Shop</title>
+</head>
+
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-100 min-h-screen flex flex-col font-sans text-gray-800">
+    
+    <header class="w-full text-center p-8 pt-12 pb-8">
+        <h1 class="text-4xl font-black text-orange-600 mb-2 tracking-tight">Fruit Shop</h1>
+        <p class="text-gray-600 text-lg font-medium">Buy the best fruits online</p>
+    </header>
+
+    <main class="w-full max-w-7xl mx-auto px-6 pb-16">
+        
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+            
+            <div class="bg-white rounded-3xl shadow-xl shadow-orange-900/5 overflow-hidden border border-orange-100 flex-1 w-full">
+                <form action="/process-order" method="POST" class="w-full flex flex-col">
+                    
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-orange-600 to-orange-500 text-white">
+                            <tr>
+                                <th class="px-8 py-5 text-left text-sm font-bold tracking-wide uppercase">Fruit</th>
+                                <th class="px-8 py-5 text-left text-sm font-bold tracking-wide uppercase">Price</th>
+                                <th class="px-8 py-5 text-center text-sm font-bold tracking-wide uppercase">Quantity To Add</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="divide-y divide-orange-100">
+                            <tr class="bg-white hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍎 Honeycrisp Apple
+                                    <input type="hidden" name="fruit_name[]" value="Honeycrisp Apple">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $2.49 / lb
+                                    <input type="hidden" name="fruit_price[]" value="2.49">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50 hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍌 Organic Banana
+                                    <input type="hidden" name="fruit_name[]" value="Organic Banana">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $0.89 / lb
+                                    <input type="hidden" name="fruit_price[]" value="0.89">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-white hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍓 Fresh Strawberries
+                                    <input type="hidden" name="fruit_name[]" value="Fresh Strawberries">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $3.99 / box
+                                    <input type="hidden" name="fruit_price[]" value="3.99">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50 hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍊 Valencia Orange
+                                    <input type="hidden" name="fruit_name[]" value="Valencia Orange">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $1.29 / lb
+                                    <input type="hidden" name="fruit_price[]" value="1.29">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-white hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🥭 Sweet Mango
+                                    <input type="hidden" name="fruit_name[]" value="Sweet Mango">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $1.75 / each
+                                    <input type="hidden" name="fruit_price[]" value="1.75">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50 hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍇 Green Grapes
+                                    <input type="hidden" name="fruit_name[]" value="Green Grapes">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $2.99 / lb
+                                    <input type="hidden" name="fruit_price[]" value="2.99">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-white hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍍 Golden Pineapple
+                                    <input type="hidden" name="fruit_name[]" value="Golden Pineapple">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $3.50 / each
+                                    <input type="hidden" name="fruit_price[]" value="3.50">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50 hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🫒 Fresh Avocados
+                                    <input type="hidden" name="fruit_name[]" value="Fresh Avocados">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $1.50 / each
+                                    <input type="hidden" name="fruit_price[]" value="1.50">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-white hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🫐 Blueberries
+                                    <input type="hidden" name="fruit_name[]" value="Blueberries">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $4.25 / box
+                                    <input type="hidden" name="fruit_price[]" value="4.25">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-100 hover:bg-orange-50/60 transition-all duration-300">
+                                <td class="px-8 py-4 text-gray-800 font-semibold text-base">
+                                    🍉 Seedless Watermelon
+                                    <input type="hidden" name="fruit_name[]" value="Seedless Watermelon">
+                                </td>
+                                <td class="px-8 py-4 text-gray-600 text-base">
+                                    $5.99 / each
+                                    <input type="hidden" name="fruit_price[]" value="5.99">
+                                </td>
+                                <td class="px-8 flex justify-center py-4">
+                                    <input type="number" name="fruit_quantity[]" min="0" value="0"
+                                        class="w-24 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-gray-800 text-center font-medium focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="p-8 bg-slate-50/80 border-t border-slate-200 flex flex-col gap-6">
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <div class="flex flex-col gap-1.5 w-full">
+                                <label for="name" class="text-sm font-semibold text-slate-700">Customer Name</label>
+                                <input type="text" name="name" id="name" required placeholder="John Doe"
+                                    class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none text-sm transition-all shadow-sm">
+                            </div>
+                            <div class="flex flex-col gap-1.5 w-full">
+                                <label for="id" class="text-sm font-semibold text-slate-700">Customer ID</label>
+                                <input type="text" name="id" id="id" required placeholder="e.g. 102938"
+                                    class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none text-sm transition-all shadow-sm">
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center pt-2">
+                            <button type="submit"
+                                class="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-600/20 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-base">
+                                Add Selected Fruits to Cart
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <aside class="w-full lg:w-80 flex flex-col gap-6 shrink-0">
+                <div class="bg-gradient-to-br from-orange-500 to-amber-500 rounded-3xl p-6 text-white shadow-xl shadow-orange-500/10 flex flex-col gap-3 relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                    
+                    <div class="flex items-center gap-2.5">
+                        <span class="text-2xl">👋</span>
+                        <h3 class="text-xl font-bold tracking-tight">Welcome, Guest!</h3>
+                    </div>
+                    <p class="text-sm text-orange-50/90 leading-relaxed">
+                        Ready to stock up on nature's finest sweets? Adjust the quantities in the table, fill in your details at the bottom, and click the button to update your cart.
+                    </p>
+                </div>
+
+                <div class="bg-white border border-orange-100 rounded-3xl p-6 shadow-xl shadow-orange-900/5 flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-orange-600 uppercase tracking-widest block mb-1">Our Story</span>
+                        <h4 class="text-lg font-bold text-gray-800">The Juicy Market</h4>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Since 2021, we have partnered directly with local organic orchards to bring fresh, premium, non-GMO fruits straight to your kitchen table. 
+                    </p>
+
+                    <div class="flex flex-col gap-2 pt-3 border-t border-gray-100 mt-2">
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <span class="flex items-center justify-center w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 font-bold text-xs">✓</span>
+                            100% Organically Grown
+                        </div>
+                        <div class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <span class="flex items-center justify-center w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 font-bold text-xs">✓</span>
+                            Same-day Farm Pickup
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+</body>
+
+</html>

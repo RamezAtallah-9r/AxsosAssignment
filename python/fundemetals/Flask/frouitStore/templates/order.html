@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Order Confirmation - Fruit Shop</title>
+</head>
+
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-100 min-h-screen flex flex-col font-sans text-gray-800 p-6 md:p-12 items-center">
+    
+    <main class="max-w-2xl w-full bg-white rounded-3xl shadow-xl shadow-orange-900/5 p-8 md:p-12 border border-orange-100 mt-8">
+        
+        <header class="mb-10">
+            <h1 class="text-3xl font-black text-orange-600 mb-3 tracking-tight">Thank you for your order!</h1>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                We ordered <span class="font-bold text-gray-900"></span> items for you and charged your student account on <span class="font-medium text-gray-800"></span>.
+            </p>
+        </header>
+
+        <section class="mb-10">
+            <h2 class="text-lg font-bold text-gray-800 border-b-2 border-orange-100 pb-2 mb-4 uppercase tracking-wider text-sm">
+                Your Information
+            </h2>
+            <div class="flex flex-col gap-3 text-sm md:text-base">
+                <div class="grid grid-cols-2 max-w-sm">
+                    <span class="text-gray-500 font-medium">Name:</span>
+                    <span class="font-semibold text-gray-800"></span>
+                </div>
+                <div class="grid grid-cols-2 max-w-sm">
+                    <span class="text-gray-500 font-medium">Your Student ID:</span>
+                    <span class="font-semibold text-gray-800"></span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-lg font-bold text-gray-800 border-b-2 border-orange-100 pb-2 mb-4 uppercase tracking-wider text-sm">
+                You've Ordered
+            </h2>
+            
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="py-3 px-6 font-semibold text-slate-700 text-sm">Fruit Name</th>
+                            <th class="py-3 px-6 font-semibold text-slate-700 text-sm w-32">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 bg-white">
+                        
+                        <tr class="hover:bg-orange-50/50 transition-colors">
+                            <td class="py-3 px-6 text-gray-800 text-sm font-medium">apple</td>
+                            <td class="py-3 px-6 text-gray-800 text-sm">10</td>
+                        </tr>
+                            <tr class="hover:bg-orange-50/50 transition-colors">
+                            <td class="py-3 px-6 text-gray-800 text-sm font-medium">apple</td>
+                            <td class="py-3 px-6 text-gray-800 text-sm">10</td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2" class="py-8 text-center text-gray-500 text-sm italic">
+                                No items were selected.
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="mt-10 flex justify-center">
+            <a href="/" class="px-6 py-2.5 bg-orange-100 hover:bg-orange-200 text-orange-700 font-semibold rounded-xl transition-colors duration-200 text-sm">
+                ← Back to Shop
+            </a>
+        </div>
+
+    </main>
+</body>
+
+</html>
