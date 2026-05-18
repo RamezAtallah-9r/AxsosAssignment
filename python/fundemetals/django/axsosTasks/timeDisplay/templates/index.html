@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="w-full h-screen bg-gray-800 flex justify-center items-center">
+
+    <main class="w-1/2 h-2/3 bg-gray-700 shadow-[0px_0px_50px_12px_rgba(0,_0,_0,_0.1)] flex flex-col justify-start gap-16 items-center p-4 rounded-3xl">
+        <h1 class="text-3xl font-bold font-serif mt-2 text-white">Current Time & Date :</h1>
+        
+        <!-- Django inserts values when building the page -->
+        <p class="text-3xl font-bold font-serif text-white mt-4" id="date">{{ current_date }}</p>
+        <p class="text-5xl tracking-[0.6rem] font-bold font-serif text-white mt-4" id="time">{{ current_time }}</p>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
