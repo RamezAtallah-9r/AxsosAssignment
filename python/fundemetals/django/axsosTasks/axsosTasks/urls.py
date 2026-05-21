@@ -26,6 +26,9 @@ urlpatterns = [
     path('surveys/', include('surveys.urls')),
     path('dojo_gold/', include('dojo_gold.urls')),
     path('counter/', include('counter.urls')),
+    path('user_shell/', include('user_shell.urls')),
+    path('guss_number/', include('guss_number.urls')),
+    path('Users_with_Templates/', include('Users_with_Templates.urls')),
 ]
 
 

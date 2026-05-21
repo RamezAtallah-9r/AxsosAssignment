@@ -1,0 +1,87 @@
+Django ORM Assignment Report
+🧩 Step 1: Create Model (User)
+from django.db import models
+
+class Users(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email_address = models.CharField(max_length=255)
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+🧩 Step 2: Create and Run Migrations
+Commands used:
+python manage.py makemigrations
+python manage.py migrate
+Purpose:
+makemigrations → creates migration files from model changes
+migrate → applies changes to database (creates table)
+🧩 Step 3: Open Django Shell
+python manage.py shell
+🧩 Step 4: Import Model
+from user_shell.models import Users
+📘 Step 5: ORM Queries (.txt file content)
+
+Create a file:
+📄 orm_queries.txt
+
+📝 CONTENT TO SUBMIT:
+# 1. Create 3 new users
+
+Users.objects.create(first_name="Ramez", last_name="Zetawi", email_address="ramez@axsos.academy", age=25)
+Users.objects.create(first_name="Chaker", last_name="Barazily", email_address="chaker@axsos.academy", age=29)
+Users.objects.create(first_name="Aws", last_name="Amazon", email_address="aws@axsos.academy", age=21)
+
+
+# 2. Retrieve all users
+
+Users.objects.all()
+
+
+# 3. Retrieve last user
+
+Users.objects.last()
+
+
+# 4. Retrieve first user
+
+Users.objects.first()
+
+
+# 5. Update user with id=3 (change last name to Pancakes)
+
+user = Users.objects.get(id=3)
+user.last_name = "Pancakes"
+user.save()
+
+
+# 6. Delete user with id=2
+
+user = Users.objects.get(id=2)
+user.delete()
+
+
+# 7. Get all users sorted by first name (ascending)
+
+Users.objects.all().order_by("first_name")
+
+
+# 8. BONUS: Sort users by first name (descending)
+
+Users.objects.all().order_by("-first_name")
+🧠 Step-by-step explanation (what you did)
+✔ Create Users
+Inserted 3 records into database using .create()
+✔ Retrieve data
+.all() → gets all users
+.first() → first record
+.last() → last record
+✔ Update data
+.get(id=3) → select one user
+modify field
+.save() → apply changes
+✔ Delete data
+.delete() removes record permanently
+✔ Sorting
+.order_by("field") → ascending
+.order_by("-field") → descending

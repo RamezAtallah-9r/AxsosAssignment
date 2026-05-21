@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Guess The Number</title>
+</head>
+
+<body class="min-h-screen bg-white flex items-center justify-center px-4">
+
+  <main class="bg-gray-100 shadow-2xl rounded-2xl p-8 w-full max-w-md text-center">
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">
+      Guess The Number
+    </h1>
+
+    <!-- Dynamic Feedback Message Area -->
+    {% if request.session.msg %}
+      <div class="{{ request.session.color }} text-white font-bold rounded-xl p-4 mb-6 shadow-md transition duration-300">
+        {{ request.session.msg }}
+      </div>
+    {% else %}
+      <div class="bg-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-500 text-sm">
+          Enter a number or use the buttons
+        </p>
+      </div>
+    {% endif %}
+
+    <!-- Single Unified Form -->
+    <form id="guessForm" action="/guss_number/check" method="post">
+      {% csrf_token %}
+      
+      <!-- Hidden action input to tell Django what happened -->
+      <input type="hidden" name="action" id="formAction" value="custom">
+
+      <div class="flex items-center justify-center gap-4">
+
+        <!-- Minus Button -->
+        <button
+          type="button"
+          onclick="handleAdjustment(-5, 'sub')"
+          class="bg-red-500 hover:bg-red-600 text-white font-semibold px-5 py-3 rounded-xl transition duration-200"
+        >
+          -5
+        </button>
+
+        <!-- Input field and main submit button -->
+        <div class="flex flex-col gap-3">
+          <input
+            type="number"
+            name="number"
+            id="numberInput"
+            placeholder="Enter number"
+            value="0"
+            class="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400 text-center font-bold text-lg"
+          />
+
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl transition duration-200"
+          >
+            Check
+          </button>
+        </div>
+
+        <!-- Plus Button -->
+        <button
+          type="button"
+          onclick="handleAdjustment(5, 'add')"
+          class="bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-3 rounded-xl transition duration-200"
+        >
+          +5
+        </button>
+
+      </div>
+    </form>
+
+  </main>
+
+  <!-- JavaScript to Handle Math -->
+  <script>
+    function handleAdjustment(amount, actionType) {
+      const input = document.getElementById('numberInput');
+      const actionHiddenInput = document.getElementById('formAction');
+
+      // 1. Get current value (default to 0 if empty)
+      let currentValue = parseInt(input.value) || 0;
+
+      // 2. Perform math
+      input.value = currentValue + amount;
+
+      // 3. Update action type payload
+      actionHiddenInput.value = actionType;
+    }
+  </script>
+
+</body>
+</html>

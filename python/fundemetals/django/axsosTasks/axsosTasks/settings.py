@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Users_with_Templates',
+    'guss_number',
+    'user_shell',
     'counter',
     'dojo_gold',
     'users',
