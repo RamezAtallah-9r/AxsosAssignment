@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Gold</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #facc15 #1f2937;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937; /* dark gray */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #facc15, #f59e0b);
+    border-radius: 10px;
+    border: 2px solid #1f2937;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #fde047, #f97316);
+}
+</style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-yellow-500 text-black p-5 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">
+            ⚔ Dojo Gold
+        </h1>
+
+        <div class="bg-black text-yellow-400 px-5 py-2 rounded-lg">
+            Gold: <span class="font-bold">{{ request.session.gold }}</span>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-6xl mx-auto p-6">
+
+        <!-- Title -->
+        <div class="text-center mb-10">
+            <h2 class="text-5xl font-bold text-yellow-400 mb-3">
+                Choose a Place
+            </h2>
+
+            <p class="text-gray-300">
+                Earn gold from different locations.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- House -->
+            <form action="/dojo_gold/count" method="post"
+                class="bg-orange-800 p-6 rounded-2xl text-center shadow-lg hover:scale-105 transition duration-300">
+                {% csrf_token %}
+                <div class="text-6xl mb-4">🏠</div>
+
+                <h3 class="text-3xl font-bold mb-3">
+                    House
+                </h3>
+
+                <p class="mb-5">
+                    Gain 5 - 10 Gold
+                </p>
+
+                <input type="hidden" name="place" value="House">
+                <button class="bg-white text-orange-600 font-bold px-5 py-3 rounded-lg w-full">
+                    Collect
+                </button>
+            </form>
+
+            <!-- Farm -->
+            <form action="/dojo_gold/count" method="post"
+                class="bg-green-600 p-6 rounded-2xl text-center shadow-lg hover:scale-105 transition duration-300">
+                {% csrf_token %}
+                <div class="text-6xl mb-4">🌾</div>
+
+                <h3 class="text-3xl font-bold mb-3">
+                    Farm
+                </h3>
+
+                <p class="mb-5">
+                    Gain 10 - 20 Gold
+                </p>
+
+                <input type="hidden" name="place" value="Farm">
+                <button class="bg-white text-green-700 font-bold px-5 py-3 rounded-lg w-full">
+                    Harvest
+                </button>
+            </form>
+
+            <!-- Mine -->
+            <form action="/dojo_gold/count" method="post"
+                class="bg-gray-700 p-6 rounded-2xl text-center shadow-lg hover:scale-105 transition duration-300">
+                {% csrf_token %}
+                <div class="text-6xl mb-4">⛏</div>
+
+                <h3 class="text-3xl font-bold mb-3">
+                    Mine
+                </h3>
+
+                <p class="mb-5">
+                    Gain 20 - 30 Gold
+                </p>
+
+                <input type="hidden" name="place" value="Mine">
+                <button class="bg-white text-gray-800 font-bold px-5 py-3 rounded-lg w-full">
+                    Dig
+                </button>
+            </form>
+
+            <!-- Casino -->
+            <form action="/dojo_gold/count" method="post"
+                class="bg-red-600 p-6 rounded-2xl text-center shadow-lg hover:scale-105 transition duration-300">
+                {% csrf_token %}
+                <div class="text-6xl mb-4">🎰</div>
+
+                <h3 class="text-3xl font-bold mb-3">
+                    Casino
+                </h3>
+
+                <p class="mb-5">
+                    Gain / Lose 0 - 50 Gold
+                </p>
+
+                <input type="hidden" name="place" value="Casino">
+                <button class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-lg w-full">
+                    Play
+                </button>
+            </form>
+
+        </div>
+
+        <!-- Activity Log -->
+        <section class="mt-10 overflow-scroll">
+
+            <div class="space-y-3 max-h-64 overflow-y-auto pr-2 custom-scroll">
+
+                <h3 class="text-2xl font-bold text-yellow-400 mb-5">
+                    Activity Log
+                </h3>
+
+                <div class="space-y-3">
+
+                    {% for msg in request.session.messages %}
+
+                    <p class="p-3 rounded-lg text-white
+            {% if msg.place == 'House' %}
+                bg-orange-800
+            {% elif msg.place == 'Farm' %}
+                bg-green-600
+            {% elif msg.place == 'Mine' %}
+                bg-gray-700
+            {% elif msg.place == 'Casino' %}
+                bg-red-600
+            {% endif %}
+        ">
+                        {{ msg.text }}
+                    </p>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

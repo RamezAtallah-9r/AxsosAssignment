@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'counter',
+    'dojo_gold',
+    'users',
+    'surveys',
+    'dojo_survey',
     'FirstDjangoProject',
     'timeDisplay',
     'django.contrib.admin',

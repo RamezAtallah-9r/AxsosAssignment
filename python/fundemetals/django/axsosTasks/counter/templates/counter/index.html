@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center text-white">
+
+    <main class="bg-gray-800/60 backdrop-blur-lg border border-gray-700 rounded-3xl shadow-2xl p-8 w-[380px]">
+
+        <!-- Title -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-cyan-400">Counter App</h1>
+            <p class="text-gray-400 text-sm mt-1">Track visits & count actions</p>
+        </div>
+
+        <!-- Display Box -->
+        <div class="bg-gray-900 p-6 rounded-2xl text-center mb-6">
+            <h2 class="text-xl text-gray-300">Page Visits</h2>
+            <p class="text-3xl font-bold text-cyan-400">{{ visits }}</p>
+
+            <hr class="my-4 border-gray-700">
+
+            <h2 class="text-xl text-gray-300">Added Counter</h2>
+            <p class="text-3xl font-bold text-green-400">{{ added }}</p>
+
+            <hr class="my-4 border-gray-700">
+
+            <h2 class="text-xl text-gray-300">Total</h2>
+            <p class="text-4xl font-bold text-yellow-400">{{ total }}</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="space-y-3">
+
+            <!-- +2 -->
+            <form action="{% url 'count' %}" method="post" class="w-full">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="add_fixed">
+                <input type="hidden" name="value" value="2">
+
+                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 transition py-3 rounded-xl font-bold shadow-lg">
+                    +2 Increase
+                </button>
+            </form>
+
+            <!-- Custom input -->
+            <form action="{% url 'count' %}" method="post" class="flex gap-2">
+                {% csrf_token %}
+
+                <input type="number" name="value" class="w-full p-3 rounded-xl bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400" placeholder="+0">
+
+                <input type="hidden" name="action" value="add_custom">
+
+                <button type="submit" class="bg-green-500 hover:bg-green-600 px-5 rounded-xl font-bold">
+                    Add
+                </button>
+            </form>
+
+            <!-- Reset -->
+            <form action="{% url 'destroy_session' %}" method="post">
+                {% csrf_token %}
+
+                <button type="submit" class="w-full bg-red-500 hover:bg-red-600 transition py-3 rounded-xl font-bold shadow-lg">
+                    Reset
+                </button>
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

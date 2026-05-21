@@ -10,4 +10,4 @@ def index(request):
         'current_date': now.strftime('%d/%m/%Y'), # Output: DD/MM/YYYY
         'current_time': now.strftime('%H-%M-%S'), # Output: HH-MM-SS
     }
-    return render(request, 'index.html', context)
+    return render(request, 'timeDisplay/index.html', context)

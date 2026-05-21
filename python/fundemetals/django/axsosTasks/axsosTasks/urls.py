@@ -19,8 +19,13 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('FirstDjangoProject.urls')),
+    path('FirstDjangoProject/', include('FirstDjangoProject.urls')),
     path('time_display/', include('timeDisplay.urls')),
+    path('dojo_survey/', include('dojo_survey.urls')),
+    path('users/', include('users.urls')),
+    path('surveys/', include('surveys.urls')),
+    path('dojo_gold/', include('dojo_gold.urls')),
+    path('counter/', include('counter.urls')),
 ]
 
 

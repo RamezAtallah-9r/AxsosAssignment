@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="w-full h-screen bg-gray-900 flex justify-center items-center font-sans antialiased">
+    <main class="w-full max-w-md p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 mx-4">
+        <form action="/dojo_survey/result" method="post" class="flex flex-col gap-5">
+            {% csrf_token %}
+            <!-- Name Input -->
+            <div class="flex flex-col gap-1.5">
+                <label for="name" class="text-sm font-medium text-gray-300 capitalize">your name :</label>
+                <input type="text" name="name" placeholder="will smith" 
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            </div>
+
+            <!-- Location Select -->
+            <div class="flex flex-col gap-1.5">
+                <label for="location" class="text-sm font-medium text-gray-300 capitalize">location :</label>
+                <select id="location" name="location"
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="NewYork">NewYork</option>
+                </select>
+            </div>
+
+            <!-- Language Select -->
+            <div class="flex flex-col gap-1.5">
+                <label for="language" class="text-sm font-medium text-gray-300 capitalize">language :</label>
+                <select name="language" id="language" 
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+
+            <!-- Comment Textarea -->
+            <div class="flex flex-col gap-1.5">
+                <label for="comment" class="text-sm font-medium text-gray-300">Comment (optional) :</label>
+                <textarea name="comment" id="comment" rows="3" 
+                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
+            </div>
+
+            <!-- Submit Button (Added for a complete form experience) -->
+            <button type="submit" 
+                class="w-full mt-2 bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-md transition duration-200 active:scale-[0.98]">
+                Submit
+            </button>
+            
+        </form>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
