@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ninja Dojo</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-slate-800 text-white py-6 shadow-lg">
+        <h1 class="text-4xl font-bold text-center">
+            Ninja Dojo Dashboard
+        </h1>
+    </header>
+
+    <!-- Forms Section -->
+    <section class="max-w-7xl mx-auto p-8">
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Add Dojo -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">
+                    Add a Dojo
+                </h2>
+
+                <form action="{% url 'ninja_dojo_shell:add_dojo' %}" method="post"  class="space-y-4">
+                  {% csrf_token %}
+                  <input type="hidden" name="action" value="dojo">
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            Name
+                        </label>
+                        <input name="name"
+                            type="text"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            City
+                        </label>
+                        <input name="city"
+                            type="text"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            State
+                        </label>
+                        <input name="state"
+                            type="text"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-cyan-500 text-white py-3 rounded-lg hover:bg-cyan-600 transition"
+                    >
+                        Add Dojo
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- Add Ninja -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">
+                    Add a Ninja
+                </h2>
+
+                <form action="{% url 'ninja_dojo_shell:add_ninja' %}" method="post"  class="space-y-4">
+                  {% csrf_token %}
+                  <input type="hidden" name="action" value="ninja">
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            First Name
+                        </label>
+                        <input
+                            type="text"
+                            name="first_name"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            Last Name
+                        </label>
+                        <input
+                            type="text"
+                            name="last_name"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-semibold">
+                            Select Dojo
+                        </label>
+
+                        <select name="dojo_type"
+                            class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                            {% for dojo in dojos %}
+                            <option value="{{ dojo.name }}">{{ dojo.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-cyan-500 text-white py-3 rounded-lg hover:bg-cyan-600 transition"
+                    >
+                        Add Ninja
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Dojos List -->
+    <section class="max-w-5xl mx-auto px-8 pb-12">
+
+        <h2 class="text-4xl font-bold text-center mb-8">
+            All Dojos
+        </h2>
+        {% for dojo in dojos %}
+        <!-- Dojo Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+
+            <div class="flex justify-between items-center mb-4">
+
+                <h3 class="text-2xl font-bold">
+                    {{ dojo.name }}
+                    <span class="text-cyan-600">
+                        ({{ dojo.ninjas.count }} Ninjas)
+                    </span>
+                </h3>
+                <form action="{% url 'ninja_dojo_shell:delete_dojo' dojo.id %}" method="post">
+                  {% csrf_token %}
+                <button
+                    class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600"
+                >
+                    Delete Dojo
+                </button>
+                </form>
+
+
+            </div>
+            {% if dojo.ninjas.count == 0 %}
+            <p class="text-gray-500">No Ninjas</p>
+            
+            {%else%}
+            <ul class="space-y-2 ml-4 list-disc">
+                {% for ninja in dojo.ninjas.all %}
+                <li>{{ ninja.first_name }} {{ ninja.last_name }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+
+    </section>
+
+</body>
+</html>
