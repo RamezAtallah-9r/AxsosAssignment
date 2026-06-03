@@ -1,0 +1,61 @@
+text# Django Shell Queries File
+# Open shell using: python manage.py shell
+
+# Setup: Import models
+from your_app_name.models import Book, Author
+
+# Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+b1 = Book.objects.create(title="C Sharp")
+b2 = Book.objects.create(title="Java")
+b3 = Book.objects.create(title="Python")
+b4 = Book.objects.create(title="PHP")
+b5 = Book.objects.create(title="Ruby")
+
+# Query: Create 5 different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+a1 = Author.objects.create(name="Jane Austen")
+a2 = Author.objects.create(name="Emily Dickinson")
+a3 = Author.objects.create(name="Fyodor Dostoevsky")
+a4 = Author.objects.create(name="William Shakespeare")
+a5 = Author.objects.create(name="Lau Tzu")
+
+# Note: The 'notes' field additions and migrations were completed in steps 1 and 2.
+
+# Query: Change the name of the C Sharp book to C#
+b1.title = "C#"
+b1.save()
+
+# Query: Change the first name of the 4th author to Bill
+# Changing "William Shakespeare" to "Bill Shakespeare"
+a4.name = "Bill Shakespeare"
+a4.save()
+
+# Query: Assign the first author to the first 2 books
+a1.books.add(b1, b2)
+
+# Query: Assign the second author to the first 3 books
+a2.books.add(b1, b2, b3)
+
+# Query: Assign the third author to the first 4 books
+a3.books.add(b1, b2, b3, b4)
+
+# Query: Assign the fourth author to the first 5 books (or in other words, all the books)
+a4.books.add(b1, b2, b3, b4, b5)
+
+# Query: Retrieve all the authors for the 3rd book
+authors_of_b3 = b3.authors.all()
+print(authors_of_b3)
+
+# Query: Remove the first author of the 3rd book
+# The first author assigned to the 3rd book (Python) was 'Emily Dickinson' (a2)
+b3.authors.remove(a2)
+
+# Query: Add the 5th author as one of the authors of the 2nd book
+b2.authors.add(a5)
+
+# Query: Find all the books that the 3rd author is part of
+books_of_a3 = a3.books.all()
+print(books_of_a3)
+
+# Query: Find all the authors that contributed to the 5th book
+authors_of_b5 = b5.authors.all()
+print(authors_of_b5)
