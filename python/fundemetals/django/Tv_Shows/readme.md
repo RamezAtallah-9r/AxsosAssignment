@@ -124,4 +124,4 @@ Django CRUD operations
 Template rendering
 URL routing system
 Backend + frontend integration
-TailwindCSS UI design
+TailwindCSS UI design# MyAWSProject
