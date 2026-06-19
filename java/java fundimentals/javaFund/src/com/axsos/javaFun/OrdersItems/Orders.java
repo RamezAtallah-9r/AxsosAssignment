@@ -10,7 +10,7 @@ public class Orders {
 
     public Orders() {
         this.name = "";
-        this.total = 0;
+        this.total = 0.00;
         this.ready = false;
         this.items = new ArrayList<>();
     }

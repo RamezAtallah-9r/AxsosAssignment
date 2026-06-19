@@ -16,11 +16,14 @@ public class TestClass {
 	        Orders order3 = new Orders();
 	        Orders order4 = new Orders();
 
+	        
+
 	        // Customer names
 	        order1.name = "Rami";
 	        order2.name = "Jimmy";
 	        order3.name = "Noah";
 	        order4.name = "Sam";
+
 
 	        // Print order1
 	        System.out.println(order1);
