@@ -2,80 +2,68 @@ package com.axsos.javaFun.OrdersItems;
 
 public class TestClass {
 
-	 public static void main(String[] args) {
+	public static void main(String[] args) {
 
-	        // Menu items
-	        Items item1 = new Items("mocha", 3.50);
-	        Items item2 = new Items("latte", 4.50);
-	        Items item3 = new Items("drip coffee", 5.50);
-	        Items item4 = new Items("cappuccino", 6.50);
+        // Create items
+        Items mocha = new Items("Mocha", 4.50);
+        Items latte = new Items("Latte", 5.00);
+        Items cappuccino = new Items("Cappuccino", 5.50);
+        Items espresso = new Items("Espresso", 3.00);
+        Items muffin = new Items("Muffin", 2.50);
 
-	        // Orders
-	        Orders order1 = new Orders();
-	        Orders order2 = new Orders();
-	        Orders order3 = new Orders();
-	        Orders order4 = new Orders();
+        // Two guest orders
+        Orders order1 = new Orders();
+        Orders order2 = new Orders();
 
-	        
+        // Three named orders
+        Orders order3 = new Orders("Sam");
+        Orders order4 = new Orders("John");
+        Orders order5 = new Orders("Emily");
 
-	        // Customer names
-	        order1.name = "Rami";
-	        order2.name = "Jimmy";
-	        order3.name = "Noah";
-	        order4.name = "Sam";
+        // Add at least 2 items per order
+        order1.addItem(mocha);
+        order1.addItem(muffin);
 
+        order2.addItem(latte);
+        order2.addItem(espresso);
 
-	        // Print order1
-	        System.out.println(order1);
+        order3.addItem(cappuccino);
+        order3.addItem(muffin);
 
-	        // Print total prediction
-	        System.out.println(order1.total);
+        order4.addItem(mocha);
+        order4.addItem(espresso);
 
-	        // Jimmy ordered mocha
-	        order2.items.add(item1);
-	        order2.total += item1.price;
+        order5.addItem(latte);
+        order5.addItem(cappuccino);
 
-	        // Noah ordered cappuccino
-	        order3.items.add(item4);
-	        order3.total += item4.price;
+        // Mark some orders ready
+        order2.setReady(true);
+        order4.setReady(true);
 
-	        // Sam added latte
-	        order4.items.add(item2);
-	        order4.total += item2.price;
+        // Test getStatusMessage()
+        System.out.println(order1.getStatusMessage());
+        System.out.println(order2.getStatusMessage());
+        System.out.println(order3.getStatusMessage());
+        System.out.println(order4.getStatusMessage());
+        System.out.println(order5.getStatusMessage());
 
-	        // Rami order ready
-	        order1.ready = true;
+        System.out.println();
 
-	        // Sam ordered 2 more lattes
-	        order4.items.add(item2);
-	        order4.items.add(item2);
-	        order4.total += item2.price * 2;
+        // Test getOrderTotal()
+        System.out.println(order1.getOrderTotal());
+        System.out.println(order2.getOrderTotal());
+        System.out.println(order3.getOrderTotal());
+        System.out.println(order4.getOrderTotal());
+        System.out.println(order5.getOrderTotal());
 
-	        // Jimmy ready
-	        order2.ready = true;
+        System.out.println();
 
-	        // Output
-	        System.out.println("\n===== Orders =====");
-
-	        System.out.printf(
-	            "Name: %s\nTotal: %.2f\nReady: %b\n\n",
-	            order1.name, order1.total, order1.ready
-	        );
-
-	        System.out.printf(
-	            "Name: %s\nTotal: %.2f\nReady: %b\n\n",
-	            order2.name, order2.total, order2.ready
-	        );
-
-	        System.out.printf(
-	            "Name: %s\nTotal: %.2f\nReady: %b\n\n",
-	            order3.name, order3.total, order3.ready
-	        );
-
-	        System.out.printf(
-	            "Name: %s\nTotal: %.2f\nReady: %b\n",
-	            order4.name, order4.total, order4.ready
-	        );
-	    }
+        // Display orders
+        order1.displayOrder();
+        order2.displayOrder();
+        order3.displayOrder();
+        order4.displayOrder();
+        order5.displayOrder();
+    }
 
 }
