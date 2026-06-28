@@ -1,0 +1,21 @@
+# IDE files
+.sonarlint/
+.metadata/
+.idea/
+.vscode/
+
+# Eclipse
+*.launch
+*.log
+
+# Compiled files
+bin/
+target/
+out/
+
+# Database / cache files
+*.mv.db
+
+# OS files
+.DS_Store
+Thumbs.db
