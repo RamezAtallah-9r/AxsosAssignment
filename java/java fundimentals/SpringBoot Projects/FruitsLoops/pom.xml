@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+    PARENT: spring-boot-starter-parent
+    What it does : Makes this project a child of Spring Boot.
+                   Inherits default versions for ALL Spring libraries
+                   so you do not need to write version numbers manually.
+                   Prevents version conflicts between Spring libraries.
+    relativePath : Empty tag tells Maven to fetch this from the internet.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
+    <!--
+    PROJECT IDENTITY
+    groupId    : Your package root. Must match your Java package structure.
+    artifactId : The name of this project. Change for each new project.
+    version    : SNAPSHOT means still in development.
+    packaging  : "jar" = Spring Boot bundles everything into one runnable jar.
+    -->
+    <groupId>com.axsos.SpringBoot</groupId>
+    <artifactId>FruitsLoops</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>FruitsLoops</name>
+    <description>Fruit Store - Spring Boot JSP project with Item model and c:forEach</description>
+
+    <!--
+    PROPERTIES
+    java.version : Spring Boot 3.x requires Java 17 minimum.
+                   This assignment uses @Controller, JSP, JSTL, and Model
+                   which all work fine on Java 17.
+    -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!--
+        SPRING BOOT WEB STARTER
+        What it does : The core dependency for any web application.
+                       Gives you @Controller, @RequestMapping, @GetMapping.
+                       Bundles an embedded Apache Tomcat server so you do
+                       not need to install a separate server.
+                       Also provides the Model class used in this assignment:
+                         public String index(Model model) { ... }
+                       Model is how you pass data (your fruits ArrayList)
+                       from the controller to the JSP view.
+        This assignment needs it for:
+                       @Controller, @RequestMapping("/"), Model model
+        Without it   : No web server, no URL mapping, no Model class.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+        TOMCAT EMBED JASPER
+        What it does : Enables JSP file support inside Spring Boot's Tomcat.
+                       Jasper is Tomcat's JSP compiler. It compiles your
+                       .jsp files into Java Servlets at runtime so the
+                       browser can receive HTML.
+        This assignment needs it for:
+                       Rendering index.jsp which displays the fruits list.
+                       Without this, returning "index.jsp" from your
+                       controller results in a 404 blank page.
+        scope        : "provided" - Tomcat supplies this at runtime.
+                       We declare it for compilation but do not bundle it twice.
+        Note         : Place your JSP at:
+                       src/main/webapp/WEB-INF/views/index.jsp
+        -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+        JSTL API (Jakarta Standard Tag Library - Interface)
+        What it does : Defines the tag interfaces used inside JSP files.
+        This assignment needs it for:
+                       c:forEach - to loop over your fruits ArrayList:
+                         <c:forEach items="${fruits}" var="fruit">
+                             ${fruit.name} - ${fruit.price}
+                         </c:forEach>
+                       c:if - for the Ninja Bonus challenge:
+                         <c:if test="${fruit.name[0] == 'G'}">
+                             show fruit name in orange
+                         </c:if>
+        IMPORTANT    : Spring Boot 3 uses "jakarta" namespace.
+                       In your JSP write:
+                         <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+                       NOT the old javax/java.sun.com URI.
+        Without it   : c:forEach and c:if tags are not recognized.
+        -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        </dependency>
+
+        <!--
+        JSTL IMPLEMENTATION (GlassFish)
+        What it does : The actual running code behind the JSTL API above.
+                       API = the contract (what tags exist).
+                       This jar = the worker (what those tags actually do).
+        This assignment needs it for:
+                       Without this jar, c:forEach throws a
+                       ClassNotFoundException at runtime even if the API
+                       jar is present. You need BOTH jars together.
+        Rule         : JSTL API and JSTL Implementation always come in pairs.
+        -->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        </dependency>
+
+        <!--
+        SPRING BOOT DEVTOOLS
+        What it does : Speeds up your development cycle:
+                       1. Auto-restarts the app when you save a Java file.
+                          Useful when you edit your Item class or controller.
+                       2. Disables JSP template caching so changes to
+                          index.jsp appear immediately without restarting.
+        This assignment needs it for:
+                       Faster iteration when building and styling the
+                       fruit store page and tweaking the Item model.
+        scope        : "runtime" - only active when running locally.
+        optional     : "true" - not passed to other dependent projects.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!--
+        SPRING BOOT TEST STARTER
+        What it does : Provides JUnit 5, Mockito, and Spring Test support.
+                       Lets you write @Test methods to verify your controller
+                       and Item model behave correctly.
+        This assignment needs it for:
+                       The auto-generated FruitsLoopsApplicationTests.java
+                       file uses @SpringBootTest from this dependency.
+                       Removing it causes red errors in that file.
+        scope        : "test" - only used during testing, never bundled in jar.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+            SPRING BOOT MAVEN PLUGIN
+            What it does : Packages your project into one runnable jar file
+                           with all dependencies bundled inside it.
+                           Enables: mvn spring-boot:run
+                           Enables: java -jar FruitsLoops-0.0.1-SNAPSHOT.jar
+            Without it   : mvn package creates a broken jar that cannot run
+                           because dependencies are not included inside it.
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
