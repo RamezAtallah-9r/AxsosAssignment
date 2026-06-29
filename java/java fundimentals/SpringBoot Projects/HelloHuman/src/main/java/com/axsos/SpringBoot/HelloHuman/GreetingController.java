@@ -12,18 +12,24 @@ public class GreetingController {
 	}
 
 	@RequestMapping("/")
-	public String hello(@RequestParam(value="FirstName", defaultValue = "Human") String fname,
-			            @RequestParam(value="LastName", required = false) String lname,
-			            @RequestParam(value="Times", defaultValue = "1") int times) {
-		String Greeting="";
-		for(int i=0;i<times;i++) {
-			if(lname==null || lname=="") {
-				Greeting+="Welcome "+fname;
+	public String hello(@RequestParam(value = "FirstName", defaultValue = "Human") String fname,
+						@RequestParam(value = "LastName", required = false) String lname,
+						@RequestParam(value = "Times", defaultValue = "1") int times) {
+		StringBuilder greeting = new StringBuilder();
+
+		for (int i = 0; i < times; i++) {
+			greeting.append("Welcome ").append(fname);
+
+			// Securely check that lname is neither null nor empty
+			if (lname != null && !lname.trim().isEmpty()) {
+				greeting.append(" ").append(lname);
 			}
-			else {
-				Greeting+="Welcome "+fname+" "+lname;
+
+			// Adds a separating space between greetings (except after the last one)
+			if (i < times - 1) {
+				greeting.append(" ");
 			}
 		}
-		return Greeting;
+		return greeting.toString();
 	}
 }
