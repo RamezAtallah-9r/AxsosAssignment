@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://apache.org" xmlns:xsi="http://w3.org"
+	xsi:schemaLocation="http://apache.org https://apache.org">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.0</version>
+		<relativePath/> 
+	</parent>
+	
+	<groupId>com.example</groupId>
+	<artifactId>Counter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Counter</name>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Core Spring MVC + embedded Tomcat + JSON support.
+		     Required for any @Controller / @RestController project -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Embedded Tomcat itself. scope=provided because when you
+		     eventually deploy as a .war to an external Tomcat server,
+		     that server already provides Tomcat — so it's excluded from
+		     the final war to avoid conflicts. For local `mvn spring-boot:run`
+		     it still works fine during development. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Jasper: the JSP-to-servlet compiler. Without this, Spring Boot
+		     cannot compile/render .jsp files at all — this is the #1 cause
+		     of "JSP not found" errors when missing -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JSTL tag library API (defines tags like c:forEach, c:if, fmt:formatDate).
+		     Version pinned explicitly because spring-boot-starter-parent does NOT
+		     manage this dependency's version — omitting it causes a build error. -->
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- Actual implementation engine that executes the JSTL tags above.
+		     API alone does nothing — you need both API + this impl, or
+		     JSP pages throw "tag not recognized" errors at runtime. -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<!-- Standard testing starter (JUnit, Mockito, etc). Only used for
+		     src/test — safe to leave even if you're not writing tests yet -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
