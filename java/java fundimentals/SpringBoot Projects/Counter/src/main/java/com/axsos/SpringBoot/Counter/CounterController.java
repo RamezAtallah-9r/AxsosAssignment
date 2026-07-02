@@ -1,7 +1,10 @@
 package com.axsos.SpringBoot.Counter;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -31,12 +34,15 @@ public class CounterController {
     }
 
     @RequestMapping("/counter")
-    public String counter(HttpSession session) {
+    public String counter(HttpSession session,Model model) {
         // If the user goes straight to /counter without visiting index,
         // initialize it to 0 so the JSP doesn't show a blank value.
         if (session.getAttribute("visits") == null) {
             session.setAttribute("visits", 0);
         }
+        int count=(int) session.getAttribute("visits");
+        model.addAttribute("counting", count);
+
         return "counter";
     }
 }

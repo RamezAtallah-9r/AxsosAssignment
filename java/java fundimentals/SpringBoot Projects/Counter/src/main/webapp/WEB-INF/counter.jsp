@@ -23,7 +23,7 @@
             <p class="text-xl font-medium text-gray-500 text-center">
                 You have visited 
                 <a href="/" class="text-blue-500 underline">the home page</a> 
-                <span id="counter" class="font-bold text-stone-700 bg-white px-3 py-1 rounded shadow-sm mx-2">${sessionScope.visits}</span> times.
+                <span id="counter" class="font-bold text-stone-700 bg-white px-3 py-1 rounded shadow-sm mx-2"> <c:out value="${counting}"></c:out> </span> times.
             </p> 
         </div>
         <div class="px-3 py-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition hover:scale-110 w-fit flex justify-between items-center gap-x-2">
